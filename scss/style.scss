@@ -1,0 +1,103 @@
+@import "modules/mixins";
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 100%;
+}
+
+.displayInline {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
+.clear-fix {
+	clear: both;
+}
+
+.width-100 {
+	width: 100%;
+}
+
+.res-img {
+	width: 100%;
+	height: auto;	
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+//header
+header {
+	padding: 25px 0;
+	h1 {
+		a {
+			display: block;
+			width: 250px;
+			height: 71px;
+			background: url('img/logo.jpg') no-repeat top left;
+			span {
+				visibility: hidden;
+			}
+		}
+	}
+	.navbar-site {
+		padding: 30px 0 0 0;
+	}
+	.navbar-default {
+		border: none;
+		background: none;
+		padding: 0;
+		.nav {
+			li {
+				margin: 0 15px 0 0;
+				@extend .displayInline;
+				&:last-child {
+					margin-right: 0;
+				}
+				a {
+					padding: 5px 10px;
+					text-transform: uppercase;
+					border: 1px solid #fff;
+					color: #8ab0d8;
+					font-size: (12/16)#{em} !important;
+					@include transition(.2s);
+					&:hover {
+						border: 1px solid #95c8ea;
+						color: #244968;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+//banner
+.banner-destaque {
+	max-height: 500px;
+	overflow: hidden;
+}
+
+//receitas home
+.receitas-home {
+	*[class*="col-"] {
+		padding: 0;
+	}
+	.title-section {
+		text-align: center;
+		line-height: 100%;
+	}
+}
