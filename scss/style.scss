@@ -10,6 +10,7 @@
 
 body {
 	font-size: 100%;
+	font-family: 'Maven Pro', sans-serif;
 }
 
 .displayInline {
@@ -29,7 +30,15 @@ body {
 
 .res-img {
 	width: 100%;
-	height: auto;	
+	height: auto;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
 }
 
 a {
@@ -40,7 +49,7 @@ a {
 }
 
 //header
-header {
+header.header {
 	padding: 25px 0;
 	h1 {
 		a {
@@ -72,7 +81,7 @@ header {
 					text-transform: uppercase;
 					border: 1px solid #fff;
 					color: #8ab0d8;
-					font-size: (12/16)#{em} !important;
+					font-size: (15/16)#{em} !important;
 					@include transition(.2s);
 					&:hover {
 						border: 1px solid #95c8ea;
@@ -93,11 +102,48 @@ header {
 
 //receitas home
 .receitas-home {
+	.title-section {
+		text-align: center;
+		h1 {
+			text-transform: uppercase;
+			font-size: (42/16)#{em};
+			font-weight: normal;
+			letter-spacing: 2px;
+			padding: 20px 0;
+			border: 3px solid #000;
+			max-width: 90%;
+			vertical-align: middle;
+			margin: 110px 0 0 0;
+		}
+	}
 	*[class*="col-"] {
 		padding: 0;
 	}
-	.title-section {
-		text-align: center;
-		line-height: 100%;
+	article {
+		height: 285px;
+		position: relative;
+		header {
+			
+			overflow: hidden;
+			padding: 0;
+			h1 {
+				opacity: 0;
+				position: absolute;
+				width: 100%;
+				left: 0;
+				bottom: 0;				
+				background: #fff;
+				padding: 20px 0 20px 10px;
+				border-left: 9px solid #000;
+				text-transform: uppercase;
+				@include transition(.1s);
+				a {
+					color: inherit;
+				}
+			}
+			&:hover h1 {
+				opacity: 1;
+			}
+		}
 	}
 }
